@@ -1,0 +1,24 @@
+<div class="carousel-wrapper">
+  <swiper-container
+    [loop]="loop"
+    [autoplay]="autoplay ? 'true' : 'false'"
+    [navigation]="navigation ? 'true' : 'false'"
+    [pagination]="pagination ? 'true' : 'false'"
+    [slides-per-view]="slidesPerView"
+    [space-between]="spaceBetween"
+    class="custom-swiper"
+  >
+    <swiper-slide *ngFor="let item of items">
+      <div class="carousel-item">
+        <img *ngIf="item.image" [src]="item.image" [alt]="item.title || 'Carousel image'" class="carousel-image" />
+        
+        <div class="carousel-content">
+          <h3 *ngIf="item.title" class="carousel-title">{{ item.title }}</h3>
+          <p *ngIf="item.subtitle" class="carousel-subtitle">{{ item.subtitle }}</p>
+          <p *ngIf="item.description" class="carousel-description">{{ item.description }}</p>
+          <div *ngIf="item.content" class="carousel-text" [innerHTML]="item.content"></div>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>

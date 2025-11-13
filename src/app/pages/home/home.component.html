@@ -1,0 +1,242 @@
+<div class="landing-page">
+  <!-- Video Hero Section with Overlay -->
+  <section class="video-hero-section">
+    <div class="video-background">
+      <video 
+        #heroVideo
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="assets/images/video-poster.jpg">
+        <source src="assets/videos/virtualmeeting.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    
+    <div class="hero-content-wrapper">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title" data-aos="fade-up">
+            We employ innovative and practical solutions to simplify business processes
+          </h1>
+          <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+            System Integration with Virtual Meeting Solutions that improve business processes for professionals
+          </p>
+          <p class="hero-tagline" data-aos="fade-up" data-aos-delay="200">
+            Your business. Our innovative virtual meeting solutions. A perfect match.
+          </p>
+          <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+            <a routerLink="/agm" class="btn-primary btn-large">
+              <span>Explore AGM Platform</span>
+              <fa-icon [icon]="faArrowRight"></fa-icon>
+            </a>
+            <a routerLink="/contact"  class="btn-secondary btn-large">
+              <span>Get a Free Quote</span>
+              <fa-icon [icon]="faEnvelope"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="400">
+        <fa-icon [icon]="faChevronDown" class="bounce"></fa-icon>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats" data-aos="fade-up">
+          <div class="stat-icon">
+            <fa-icon [icon]="stat.icon" size="2x"></fa-icon>
+          </div>
+          <h3 class="stat-number">{{ stat.number }}</h3>
+          <p class="stat-label">{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Powerful Features</h2>
+        <p class="section-subtitle">
+          Our expert technical team will help you through all stages of your Virtual Meeting process
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features; let i = index" 
+             data-aos="fade-up" 
+             [attr.data-aos-delay]="i * 100">
+          <div class="feature-icon-wrapper">
+            <fa-icon [icon]="feature.icon" size="2x"></fa-icon>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Services Section -->
+  <section class="services-section section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">
+          When getting everyone to a business meeting is difficult, our virtual meeting is your secret solution
+        </h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services; let i = index" 
+             data-aos="fade-up" 
+             [attr.data-aos-delay]="i * 100">
+          <div class="service-icon-wrapper">
+            <fa-icon [icon]="service.icon" size="3x"></fa-icon>
+          </div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="industries-section section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-subtitle">
+          Trusted by professionals across multiple sectors
+        </p>
+      </div>
+      
+      <div class="industries-grid">
+        <div class="industry-card" *ngFor="let industry of industries; let i = index" 
+             data-aos="zoom-in" 
+             [attr.data-aos-delay]="i * 50">
+          <div class="industry-icon" [style.background]="industry.color">
+            <span>{{ industry.icon }}</span>
+          </div>
+          <h3 class="industry-name">{{ industry.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions-section section-padding">
+    <div class="container">
+      <div class="solutions-grid">
+        <!-- Solution 1 -->
+        <div class="solution-card" data-aos="fade-right">
+          <div class="solution-image">
+            <img src="assets/images/Virtualupon_image7.jpg" alt="Online Learning" loading="lazy" />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="solution-content">
+            <h3>Online Learning and Virtual Classrooms</h3>
+            <p>
+              In a modern world where remote learning is becoming increasingly popular, virtual schooling 
+              platforms are optimal for providing educational programming and courses online. VirtualUpon 
+              serves as a perfect virtual classroom that is conducive to teacher-student interaction and 
+              scalable to any required audience size.
+            </p>
+            <a routerLink="/contact"  class="btn-primary">
+              <span>Get a Free Quote</span>
+              <fa-icon [icon]="faArrowRight"></fa-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solution 2 -->
+        <div class="solution-card reverse" data-aos="fade-left">
+          <div class="solution-content">
+            <h3>Virtual Meeting Platform</h3>
+            <p>
+              We provide expert Virtual Meeting services tailored to your specific needs. Our team will 
+              schedule your event, and set up an easy to use one-click registration system. Our staff will 
+              take care of running and monitoring your meeting to ensure that everything is functioning correctly.
+            </p>
+            <a routerLink="/agm" class="btn-primary">
+              <span>Learn More</span>
+              <fa-icon [icon]="faArrowRight"></fa-icon>
+            </a>
+          </div>
+          <div class="solution-image">
+            <img src="assets/images/virtualupon_image4.jpg" alt="Virtual Meeting Platform" loading="lazy" />
+            <div class="image-overlay"></div>
+          </div>
+        </div>
+
+        <!-- Solution 3 -->
+        <div class="solution-card" data-aos="fade-right">
+          <div class="solution-image">
+            <img src="assets/images/virtualupon_image6-2.jpg" alt="Technical Support" loading="lazy" />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="solution-content">
+            <h3>Technical Support</h3>
+            <ul class="support-list">
+              <li><fa-icon [icon]="faCheckCircle"></fa-icon> Text, email, and phone support</li>
+              <li><fa-icon [icon]="faCheckCircle"></fa-icon> Live Meeting Moderation</li>
+              <li><fa-icon [icon]="faCheckCircle"></fa-icon> Attendee Registration</li>
+              <li><fa-icon [icon]="faCheckCircle"></fa-icon> 24/7 Customer Service</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Solution 4 -->
+        <div class="solution-card reverse" data-aos="fade-left">
+          <div class="solution-content">
+            <h3>Expert Consulting</h3>
+            <p>
+              Do you have questions about any aspect of your meeting process? We offer a wide variety of 
+              consulting services to help you plan and organize an effective and professional AGM or business 
+              meeting. Our experts will answer any questions that you have about execution and functionality.
+            </p>
+            <a href="#contact" class="btn-secondary">
+              <span>Contact Us</span>
+              <fa-icon [icon]="faArrowRight"></fa-icon>
+            </a>
+          </div>
+          <div class="solution-image">
+            <img src="assets/images/virtualupon_image5-2.jpg" alt="Expert Consulting" loading="lazy" />
+            <div class="image-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Ready to Transform Your Virtual Meetings?</h2>
+        <p>Get started today with a free consultation from our experts</p>
+        <div class="cta-buttons">
+          <a routerLink="/contact"
+ class="btn-primary btn-large">
+            <span>Schedule a Demo</span>
+            <fa-icon [icon]="faCalendarAlt"></fa-icon>
+          </a>
+          <a routerLink="/agm" class="btn-secondary btn-large">
+            <span>Explore Platform</span>
+            <fa-icon [icon]="faArrowRight"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

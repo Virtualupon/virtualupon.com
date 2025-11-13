@@ -1,0 +1,226 @@
+<div class="test-tools-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-icon">🎯</div>
+      <h1 class="hero-title animate-fade-in">Check Your Video and Audio Setup</h1>
+      <p class="hero-subtitle animate-fade-in-delay">
+        Ensure your camera, microphone, and speakers are working perfectly before your meeting
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">{{ totalSections() }}</span>
+          <span class="stat-label">Test Sections</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Minutes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Reliable</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="bounce">↓</span>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <section class="quick-nav">
+    <div class="container">
+      <h2 class="quick-nav-title">Quick Navigation</h2>
+      <div class="nav-cards">
+        @for (section of testSections(); track section.id) {
+          <div class="nav-card" (click)="scrollToSection(section.id)">
+            <div class="nav-icon">{{ section.icon }}</div>
+            <div class="nav-title">{{ section.title }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Indicator -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar" [style.width.%]="currentProgress()"></div>
+  </div>
+
+  <!-- Test Sections -->
+  <section class="test-sections">
+    <div class="container">
+      @for (section of testSections(); track section.id) {
+        <div class="section-card" [id]="section.id">
+          <div 
+            class="section-header" 
+            (click)="toggleSection(section.id)"
+            [class.expanded]="section.isExpanded">
+            <div class="section-header-content">
+              <div class="section-icon">{{ section.icon }}</div>
+              <div class="section-info">
+                <h2 class="section-title">{{ section.title }}</h2>
+                <p class="section-description">{{ section.description }}</p>
+              </div>
+            </div>
+            <div class="expand-icon">
+              {{ section.isExpanded ? '−' : '+' }}
+            </div>
+          </div>
+
+          @if (section.isExpanded) {
+            <div class="section-content">
+              <div class="steps-container">
+                @for (step of section.steps; track step.id) {
+                  <div class="step-card">
+                    <div class="step-number">{{ step.id }}</div>
+                    <div class="step-content">
+                      <h3 class="step-title">{{ step.title }}</h3>
+                      <p class="step-description">{{ step.description }}</p>
+                      @if (step.imagePath) {
+                        <div class="step-image-wrapper">
+                          <img 
+                            [src]="step.imagePath" 
+                            [alt]="step.title"
+                            class="step-image"
+                            (click)="openLightbox(step.imagePath)">
+                          <div class="image-zoom-hint">Click to enlarge</div>
+                          @if (step.figureLabel) {
+                            <p class="figure-label">{{ step.figureLabel }}</p>
+                          }
+                        </div>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Troubleshooting Section -->
+  <section class="troubleshooting-section">
+    <div class="container">
+      <div class="section-header-block">
+        <h2 class="section-title">Troubleshooting Guide</h2>
+        <p class="section-subtitle">
+          Common issues and solutions to help you get started quickly
+        </p>
+      </div>
+
+      <div class="troubleshooting-cards">
+        @for (item of troubleshootingItems(); track item.id) {
+          <div 
+            class="trouble-card"
+            [class.expanded]="item.isExpanded"
+            (click)="toggleTroubleshooting(item.id)">
+            <div class="trouble-header">
+              <div class="trouble-icon">❓</div>
+              <h3 class="trouble-question">{{ item.question }}</h3>
+              <div class="trouble-toggle">{{ item.isExpanded ? '−' : '+' }}</div>
+            </div>
+            @if (item.isExpanded) {
+              <div class="trouble-answer">
+                {{ item.answer }}
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Browser Permission Images -->
+      <div class="permission-guide">
+        <h3 class="permission-title">Browser Permission Settings</h3>
+        <div class="permission-grid">
+          <div class="permission-card">
+            <h4>Google Chrome</h4>
+            <img 
+              src="assets/test-tools/Obtaining-Microphone-Camera-permission-on-Google-Chrome-Chrome.png"
+              alt="Chrome permissions"
+              (click)="openLightbox('assets/test-tools/Obtaining-Microphone-Camera-permission-on-Google-Chrome-Chrome.png')"
+              class="permission-image">
+            <p class="permission-desc">Click the padlock icon and allow camera/microphone</p>
+          </div>
+          <div class="permission-card">
+            <h4>Firefox</h4>
+            <img 
+              src="assets/test-tools/Obtaining-Microphone-Camera-permission-on-Google-Chrome_FireFox.png"
+              alt="Firefox permissions"
+              (click)="openLightbox('assets/test-tools/Obtaining-Microphone-Camera-permission-on-Google-Chrome_FireFox.png')"
+              class="permission-image">
+            <p class="permission-desc">Click the camera icon and set permissions to allow</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Testing Tips -->
+      <div class="testing-tips">
+        <h3 class="tips-title">Before Contacting Support</h3>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">📹</div>
+            <h4>Test Your Video</h4>
+            <p>Search online for "Check your video online" and test your camera</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🎤</div>
+            <h4>Test Your Audio</h4>
+            <p>Search online for "Check your audio online" and test your microphone</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🌐</div>
+            <h4>Check Browser Settings</h4>
+            <p>Search for "Allow camera and audio on [your browser]" for specific instructions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Tutorial Section -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-header-block">
+        <h2 class="section-title">Video Tutorial</h2>
+        <p class="section-subtitle">
+          Watch our comprehensive guide for device settings and support
+        </p>
+      </div>
+
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe
+            [src]="videoUrl"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="video-iframe">
+          </iframe>
+        </div>
+        <div class="video-info">
+          <h3>Device Settings and Support</h3>
+          <p>This 4-minute tutorial covers all the essential steps to test your camera, microphone, and speakers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  @if (lightboxImage()) {
+    <div class="lightbox-overlay" (click)="closeLightbox()">
+      <div class="lightbox-content" (click)="$event.stopPropagation()">
+        <button class="lightbox-close" (click)="closeLightbox()">×</button>
+        <img [src]="lightboxImage()" alt="Enlarged view" class="lightbox-image">
+      </div>
+    </div>
+  }
+
+  <!-- Floating Action Button -->
+  <button class="fab" (click)="scrollToSection('initial-setup')" title="Back to top">
+    ↑
+  </button>
+</div>

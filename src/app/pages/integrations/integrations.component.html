@@ -1,0 +1,74 @@
+<div class="integrations-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Enterprise Level Tech Solutions and Integrations</h1>
+      <p class="hero-subtitle">We employ innovative and practical solutions to simplify business processes</p>
+    </div>
+  </section>
+
+  <section class="services-section section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-block">
+          <img src="/assets/images/cloud_Computing2.jpg" alt="Cloud Computing" class="content-image" />
+        </div>
+        <div class="content-block">
+          <h2>Comprehensive Cloud Solutions</h2>
+          <p>
+            Unlock the full potential of your business with our comprehensive cloud services. We begin by conducting 
+            an in-depth review of your current IT environment, ensuring we understand your unique needs and challenges.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-grid reverse">
+        <div class="content-block">
+          <h2>Seamless System Integration</h2>
+          <p>
+            Ensure your business systems work harmoniously with our seamless system integration services. We specialize 
+            in integrating diverse IT systems and applications, creating a unified infrastructure.
+          </p>
+        </div>
+        <div class="content-block">
+          <img src="/assets/images/feature-img-1-2.jpg" alt="System Integration" class="content-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-grid-section section-padding">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services">
+          <fa-icon [icon]="service.icon" size="3x"></fa-icon>
+          <h3>{{ service.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="additional-services section-padding">
+    <div class="container">
+      <div class="service-block">
+        <h2>Managed IT Services</h2>
+        <p>
+          Elevate your business with our comprehensive Managed IT Services. We provide proactive and continuous 
+          monitoring, maintenance, and support to ensure your IT infrastructure operates seamlessly and efficiently.
+        </p>
+      </div>
+
+      <div class="service-block">
+        <h2>Information Security & IT Auditing</h2>
+        <p>
+          Protect your business with our comprehensive Information Security and IT Auditing services. Our team conducts 
+          thorough risk assessments of your IT infrastructure, identifying vulnerabilities and implementing robust security measures.
+        </p>
+      </div>
+
+      <div class="cta-block">
+        <h2>Ready To Get Started?</h2>
+        <a routerLink="/contact" class="btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</div>

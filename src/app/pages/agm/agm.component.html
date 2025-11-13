@@ -1,0 +1,187 @@
+<div class="agm-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Enterprise Virtual Annual General Meeting Platform</h1>
+      <p class="hero-subtitle">
+        When an AGM meeting fails to reach a quorum, it results in unnecessary expenditure, wasted time, 
+        and the postponement of critical decisions. Our platform provides an integrated solution tailored 
+        to mitigate these business challenges.
+      </p>
+    </div>
+  </section>
+
+  <section class="platform-section section-padding">
+    <div class="container">
+      <div class="platform-content">
+        <img src="assets/images/virtualupon11.png" alt="AGM Platform" class="platform-image" />
+        <div class="platform-text">
+          <h2>Comprehensive AGM Solution</h2>
+          <p>
+            Our platform is meticulously crafted to align with the specific requirements of property managers 
+            and condominium board directors. We offer a comprehensive service solution tailored for the efficient 
+            management of virtual annual general meetings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section section-padding">
+    <div class="container">
+      <h2 class="section-title">Hosted Virtual Meetings</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features">
+          <div class="feature-icon">
+            <fa-icon [icon]="feature.icon" size="2x"></fa-icon>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="security-section section-padding">
+    <div class="container">
+      <h2 class="section-title">Security Features</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of securityFeatures">
+          <div class="feature-icon security">
+            <fa-icon [icon]="feature.icon" size="2x"></fa-icon>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section section-padding">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      
+      <app-carousel
+        [items]="testimonials"
+        [autoplay]="true"
+        [loop]="true"
+        [navigation]="true"
+        [pagination]="true"
+      ></app-carousel>
+    </div>
+  </section>
+
+  <!-- PDF Resources Section for Property Managers -->
+  <section class="resources-section section-padding">
+    <div class="container">
+      <div class="resources-wrapper">
+        <h2 class="resources-title">More information for property managers here</h2>
+        
+        <div class="resources-buttons">
+          <a 
+            href="assets/doc/pdf/agm-attendee-guide.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-resource">
+            <fa-icon [icon]="faFileDownload"></fa-icon>
+            <span>AGM Attendee User Guide</span>
+          </a>
+          
+          <a 
+            href="assets/doc/pdf/agm-application-features.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-resource">
+            <fa-icon [icon]="faFileDownload"></fa-icon>
+            <span>AGM Application Features</span>
+          </a>
+          
+          <a 
+            href="assets/doc/pdf/qa.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-resource">
+            <fa-icon [icon]="faQuestionCircle"></fa-icon>
+            <span>Q & A</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <!-- Test Tools Section for Attendees -->
+      <div class="resources-wrapper">
+        <h2 class="resources-title">More information for attendees here</h2>
+        
+        <div class="resources-buttons center">
+          <a 
+            routerLink="/test-tools"
+            class="btn-resource">
+            <fa-icon [icon]="faVideo"></fa-icon>
+            <span>Test Audio & Video</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section section-padding">
+    <div class="container">
+      <div class="pricing-card">
+        <h2 class="section-title">HD video, 100% Browser-based, Zero installation with end-to-end encryption</h2>
+        
+        <div class="pricing-features">
+          <div class="pricing-feature">
+            <fa-icon [icon]="faBell" size="2x"></fa-icon>
+            <h4>SMS Notification</h4>
+            <p>Get notified as soon as an owner or tenant receives an email or submits a form.</p>
+          </div>
+          <div class="pricing-feature">
+            <fa-icon [icon]="faEnvelope" size="2x"></fa-icon>
+            <h4>Email Tracking</h4>
+            <p>Know when your recipients receive, open, and view your emails.</p>
+          </div>
+          <div class="pricing-feature">
+            <fa-icon [icon]="faBell" size="2x"></fa-icon>
+            <h4>Email Notification</h4>
+            <p>Get notifications every time your tenants or owners submit forms.</p>
+          </div>
+          <div class="pricing-feature">
+            <fa-icon [icon]="faCalendar" size="2x"></fa-icon>
+            <h4>Weekly Reminders</h4>
+            <p>Set weekly reminders to keep track of all meetings and form paperwork.</p>
+          </div>
+        </div>
+
+        <a routerLink="/contact" class="btn-primary btn-large">
+          <span>Get Pricing</span>
+          <fa-icon [icon]="faArrowRight"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon">
+          <fa-icon [icon]="faEnvelope" size="3x"></fa-icon>
+        </div>
+        <h2>Ready to Get Started?</h2>
+        <p>Fill out the form and our team will get back to you within 24 hours</p>
+        <div class="cta-buttons">
+          <a routerLink="/contact" class="btn-primary btn-large">
+            <span>Get a Quote Now</span>
+            <fa-icon [icon]="faArrowRight"></fa-icon>
+          </a>
+          <a href="tel:18559195378" class="btn-secondary btn-large">
+            <span>Call Us: 1 (855) 919-5378</span>
+            <fa-icon [icon]="faPhone"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

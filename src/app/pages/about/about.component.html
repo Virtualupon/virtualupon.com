@@ -1,0 +1,48 @@
+<div class="about-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Our Experience</h1>
+      <p class="hero-subtitle">
+        Our team has over 30 years of collective experience in a variety of industries and have proven records 
+        of work experience in fortune 500 companies such as Siemens, SNC Lavalin Pharma, Microsoft, Reuters, 
+        Dow Jones, and many others.
+      </p>
+    </div>
+  </section>
+
+  <section class="stats-section section-padding">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <h2 class="stat-number">{{ stat.number }}</h2>
+          <p class="stat-label">{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section section-padding">
+    <div class="container">
+      <h2 class="section-title">Meet The Team</h2>
+      
+      <app-carousel
+        [items]="teamMembers"
+        [slidesPerView]="3"
+        [spaceBetween]="30"
+        [loop]="true"
+        [navigation]="true"
+        [pagination]="true"
+      ></app-carousel>
+    </div>
+  </section>
+
+  <section class="contact-section section-padding">
+    <div class="container">
+      <div class="contact-card">
+        <h2>We would be glad to hear from you!</h2>
+        <p>Let's discuss how we can help you achieve your virtual meeting goals.</p>
+        <a routerLink="/contact" class="btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</div>

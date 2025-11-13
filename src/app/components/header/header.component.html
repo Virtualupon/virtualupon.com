@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="contact-info">
+          <a href="tel:18559195378" class="contact-link">
+            <fa-icon [icon]="faPhone"></fa-icon>
+            <span>1 (855) 919-5378</span>
+          </a>
+          <a href="mailto:info@virtualupon.com" class="contact-link">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+            <span>info&#64;virtualupon.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a routerLink="/" class="logo" (click)="closeMenu()">
+          <img src="assets/images/Logo_Big.png" alt="VirtualUpon" class="logo-img" />
+          <!-- <span class="logo-text">VirtualUpon</span> -->
+        </a>
+
+        <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'">
+          <fa-icon [icon]="isMenuOpen ? faTimes : faBars" size="lg"></fa-icon>
+        </button>
+
+        <ul class="nav-menu" [class.active]="isMenuOpen">
+          <li class="nav-item">
+            <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/agm" routerLinkActive="active-link" (click)="closeMenu()">
+              AGM
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/integrations" routerLinkActive="active-link" (click)="closeMenu()">
+              Integrations
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/about" routerLinkActive="active-link" (click)="closeMenu()">
+              About Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/support" routerLinkActive="active-link" (click)="closeMenu()">
+              Support
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/contact"
+ class="btn-contact" (click)="closeMenu()">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
